@@ -1,6 +1,8 @@
 # Instructions    
 
-After cloning this repository, you need to initiate a virtual environment. Then install necessary packages within it.
+- Requirement Doc : [Google Doc](https://docs.google.com/document/d/1aKiTutNwmsbQ9dNm15BYotKnjPUbZKUKVi2DgoaUhHs/edit)    
+
+After cloning this repository, you need to initiate a virtual environment. Then install necessary packages within it.    
 
 1. Go to project directory
 ```console
