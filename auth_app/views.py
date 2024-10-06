@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.shortcuts import redirect
 
-from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.forms import PasswordChangeForm, SetPasswordForm
 from django.contrib.auth.views import LoginView, PasswordChangeView
 
 from django.urls import reverse_lazy
@@ -61,7 +61,21 @@ class LogoutUser(View):
 
 class ChangePasswordView(PasswordChangeView):
     form_class = PasswordChangeForm
-    success_url = reverse_lazy("order_car:my_orders")
+    success_url = "/"
+    template_name = "auth_app/change_password.html"
+
+    def form_valid(self, form):
+        messages.success(self.request, "Changed password successfully")
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        messages.error(self.request, "FAILED to Change password")
+        return super().form_invalid(form)
+
+
+class ChangePasswordWihtoutPasswordView(PasswordChangeView):
+    form_class = SetPasswordForm
+    success_url = "/"
     template_name = "auth_app/change_password.html"
 
     def form_valid(self, form):
@@ -75,7 +89,7 @@ class ChangePasswordView(PasswordChangeView):
 
 class ChangeProfileView(UpdateView):
     form_class = ChangeProfileForm
-    success_url = reverse_lazy("order_car:my_orders")
+    success_url = "/"
     template_name = "auth_app/change_profile.html"
 
     def get_object(self, queryset=None):

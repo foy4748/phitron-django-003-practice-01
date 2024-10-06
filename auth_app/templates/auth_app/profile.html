@@ -5,8 +5,8 @@
 	{% if request.user.is_authenticated %}
 	<div class="row">
 		<div class="col-12 col-md-3">
-			<a href="{% url "auth:change_password"%}"><p>Change Password</p></a>
-			<!-- <a href="#"><p>Change Password (without Password)</p></a> -->
+			<a href="{% url "auth:change_password" %}"><p>Change Password</p></a>
+			<a href="{% url "auth:change_password_without_password" %}"><p>Change Password (without Password)</p></a>
 			<a href="{% url "auth:change_profile"%}"><p>Change Profile</p></a>
 		</div>
 		<div class="col-12 col-md-9">
