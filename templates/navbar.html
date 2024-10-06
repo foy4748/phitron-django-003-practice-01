@@ -12,17 +12,23 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="/">Musician Directory</a>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <a class="navbar-brand" href="/">Auth App</a>
+      <ul class="navbar-nav m-auto">
+		{% if request.user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url "album:all_albums" %}">Album List</a>
+          <a class="nav-link" href="/">Profile</a>
         </li>
         <li class="nav-item">
-			<a class="nav-link" href="{% url "musician:add_musician_form" %}">Add Musician</a>
+          <a class="nav-link" href="{% url "auth:logout" %}">Log out</a>
+        </li>
+		{% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url "auth:registration_form" %}">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url "album:add_album_form" %}">Add Album</a>
+			<a class="nav-link" href="{% url "auth:login_form" %}">Login</a>
         </li>
+		{% endif %}
       </ul>
     </div>
   </div>

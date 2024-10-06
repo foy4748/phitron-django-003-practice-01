@@ -1,0 +1,23 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<div class="container">
+	{% if request.user.is_authenticated %}
+	<div class="row">
+		<div class="col-12 col-md-3">
+			<a href="{% url "auth:change_password"%}"><p>Change Password</p></a>
+			<!-- <a href="#"><p>Change Password (without Password)</p></a> -->
+			<a href="{% url "auth:change_profile"%}"><p>Change Profile</p></a>
+		</div>
+		<div class="col-12 col-md-9">
+			<h1 class="mb-3">{{request.user.first_name}} {{request.user.last_name}}</h1>
+			<h2>{{request.user.email}} </h2>
+		</div>
+	</div>
+	{% else %}
+	<div class="d-flex justify-content-center">
+		<a class="btn btn-primary" href="{% url "auth:login_form" %}">Please Login</a>
+	</div>
+	{% endif %}
+</div>
+{% endblock content %}
