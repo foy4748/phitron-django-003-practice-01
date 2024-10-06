@@ -1,6 +1,9 @@
 # Instructions    
 
-- Requirement Doc : [Google Doc](https://docs.google.com/document/d/1aKiTutNwmsbQ9dNm15BYotKnjPUbZKUKVi2DgoaUhHs/edit)    
+- DEMO Video - [Google Drive](https://drive.google.com/file/d/14p7U6E0JJkwsQADkpDUECc65vdmUwKWw/view?usp=drive_link)
+
+- Requirement Doc **Module 14.5** : [Google Doc](https://docs.google.com/document/d/1aKiTutNwmsbQ9dNm15BYotKnjPUbZKUKVi2DgoaUhHs/edit)    
+- Requirement Doc **Module 18.5** : [Google Doc \(Current Branch\)](https://docs.google.com/document/d/1sQFX--wDTK6DpdzJf2MDH5ovFdvSpnEtM4S0-yB98ug/edit)    
 
 After cloning this repository, you need to initiate a virtual environment. Then install necessary packages within it.    
 
